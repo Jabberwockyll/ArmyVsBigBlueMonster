@@ -4,5 +4,9 @@
     <string name="app_name">Army Vs BigBlueMonster</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title">Army Vs Big Blue Monster</string>
+    <string name="play">Play Game</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="menu">Menu</string>
 
 </resources>

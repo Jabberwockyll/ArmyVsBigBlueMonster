@@ -1,6 +1,5 @@
 package com.polyarch.cs295.armyvsbigbluemonster;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,29 +9,29 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class GameActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button playGameButton = (Button) findViewById(R.id.playGameButton);
+        setContentView(R.layout.activity_game);
+        Button menuButton = (Button) findViewById(R.id.menuButton);
 
-        View.OnClickListener playGameButtonListener = new View.OnClickListener() {
+        View.OnClickListener menuButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent playGameIntent = new Intent(MainActivity.this, GameActivity.class);
-                startActivity(playGameIntent);
+                Intent menuIntent = new Intent(GameActivity.this, MainActivity.class);
             }
         };
 
-        playGameButton.setOnClickListener(playGameButtonListener);
+        menuButton.setOnClickListener(menuButtonListener);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_game, menu);
         return true;
     }
 

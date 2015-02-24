@@ -21,6 +21,8 @@ public class GameActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent menuIntent = new Intent(GameActivity.this, MainActivity.class);
+                //Tell Android to do something with the new intent
+                startActivity(menuIntent);
             }
         };
 

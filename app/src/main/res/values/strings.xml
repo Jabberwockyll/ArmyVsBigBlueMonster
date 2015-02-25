@@ -8,5 +8,7 @@
     <string name="play">Play Game</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="menu">Menu</string>
+    <string name="fight">Fight</string>
+    <string name="count">Count</string>
 
 </resources>

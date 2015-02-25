@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class GameActivity extends ActionBarActivity {
@@ -15,7 +16,10 @@ public class GameActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        Button menuButton = (Button) findViewById(R.id.menuButton);
+        final Button menuButton = (Button) findViewById(R.id.menuButton);
+        final Button fightButton = (Button) findViewById(R.id.fightButton);
+        final TextView countText = (TextView) findViewById(R.id.countTextView);
+
 
         View.OnClickListener menuButtonListener = new View.OnClickListener() {
             @Override
@@ -25,6 +29,15 @@ public class GameActivity extends ActionBarActivity {
                 startActivity(menuIntent);
             }
         };
+
+        View.OnClickListener fightButtonListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countText.setText("Count: ");
+            }
+        };
+
+        fightButton.setOnClickListener(fightButtonListener);
 
         menuButton.setOnClickListener(menuButtonListener);
     }

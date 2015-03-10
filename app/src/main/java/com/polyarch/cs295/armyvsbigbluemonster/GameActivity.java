@@ -19,7 +19,10 @@ public class GameActivity extends ActionBarActivity {
         final Button menuButton = (Button) findViewById(R.id.menuButton);
         final Button fightButton = (Button) findViewById(R.id.fightButton);
         final TextView countText = (TextView) findViewById(R.id.countTextView);
+        final TextView gameMessageText = (TextView) findViewById(R.id.gameMessageTextView);
 
+        final Soldier sol = new Soldier();
+        final Monster mon = new Monster("Blue", 10);
 
         View.OnClickListener menuButtonListener = new View.OnClickListener() {
             @Override
@@ -33,7 +36,13 @@ public class GameActivity extends ActionBarActivity {
         View.OnClickListener fightButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                countText.setText("Count: ");
+                mon.battle(sol);
+
+                countText.setText("Count: " + sol.getCount());
+
+                if (!mon.isAlive()){
+                    gameMessageText.setText("You have killed the monster!");
+                }
             }
         };
 

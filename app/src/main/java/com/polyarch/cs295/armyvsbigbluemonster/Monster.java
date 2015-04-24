@@ -22,28 +22,34 @@ public class Monster extends Entity
 
     }
 
-    public Monster(String type, int killNumber){
+    public Monster(String type, int killNumber)
+    {
         this.type = type;
         this.killNumber = killNumber;
     }
-    public Monster(){
+    public Monster()
+    {
         type = "default";
         killNumber = 10;
     }
 
-    public int getKillNumber() {
+    public int getKillNumber()
+    {
         return killNumber;
     }
 
-    public void setKillNumber(int killNumber) {
+    public void setKillNumber(int killNumber)
+    {
         this.killNumber = killNumber;
     }
 
-    public boolean isAlive() {
+    public boolean isAlive()
+    {
         return alive;
     }
 
-    public void setAlive(boolean alive) {
+    public void setAlive(boolean alive)
+    {
         this.alive = alive;
     }
 }

@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class GameActivity extends ActionBarActivity {
+public class CombatActivity extends ActionBarActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         final Button menuButton = (Button) findViewById(R.id.menuButton);
@@ -24,23 +26,28 @@ public class GameActivity extends ActionBarActivity {
         final Soldier sol = new Soldier();
         final Monster mon = new Monster("Blue", 10);
 
-        View.OnClickListener menuButtonListener = new View.OnClickListener() {
+        View.OnClickListener menuButtonListener = new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(GameActivity.this, MainActivity.class);
+            public void onClick(View v)
+            {
+                Intent menuIntent = new Intent(CombatActivity.this, MainActivity.class);
                 //Tell Android to do something with the new intent
                 startActivity(menuIntent);
             }
         };
 
-        View.OnClickListener fightButtonListener = new View.OnClickListener() {
+        View.OnClickListener fightButtonListener = new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 mon.battle(sol);
 
                 countText.setText("Count: " + sol.getCount());
 
-                if (!mon.isAlive()){
+                if (!mon.isAlive())
+                {
                     gameMessageText.setText("You have killed the monster!");
                 }
             }
@@ -53,21 +60,24 @@ public class GameActivity extends ActionBarActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_game, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 

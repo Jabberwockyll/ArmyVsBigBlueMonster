@@ -28,11 +28,13 @@ public class Soldier
         count -= amount;
     }
 
-    public int getCount() {
+    public int getCount()
+    {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(int count)
+    {
         this.count = count;
     }
 }

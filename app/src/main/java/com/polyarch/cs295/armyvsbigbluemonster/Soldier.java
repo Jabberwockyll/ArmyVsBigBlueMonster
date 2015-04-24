@@ -7,20 +7,20 @@ import java.util.Random;
  */
 public class Soldier
 {
-
-    Random rand = new Random();
-
     private int count = 25;
+    private int attack;
+    private int cost;
+
+    private String type;
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
 
     public void recruit(int amount)
     {
         count += amount;
-    }
-
-    public int attack()
-    {
-        int rollNumber = rand.nextInt( (count - 1) + 1) + 1;
-        return rollNumber;
     }
 
     public void death(int amount)
@@ -37,4 +37,25 @@ public class Soldier
     {
         this.count = count;
     }
+
+    public int getAttack()
+    {
+        return attack;
+    }
+
+    public void setAttack(int count)
+    {
+        this.attack = attack;
+    }
+
+    public int getCost()
+    {
+        return cost;
+    }
+
+    public void setCost(int count)
+    {
+        this.cost = cost;
+    }
+
 }

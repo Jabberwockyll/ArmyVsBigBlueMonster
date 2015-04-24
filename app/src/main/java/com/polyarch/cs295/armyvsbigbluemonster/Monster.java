@@ -5,49 +5,33 @@ package com.polyarch.cs295.armyvsbigbluemonster;
  */
 public class Monster extends Entity
 {
-    private int killNumber;
+    private int stamina; //When this reaches 0 or lower the monster feints.
+    private int attack; //This decides how many soliders are defeated when the monster attacks.
+    private int challengeRating; //This is an indicator of the monsters strength and how much influence one will gain from beating the monster.
 
     private boolean alive = true;
 
-    public void battle(Soldier sol)
-    {
-        if(sol.attack() >= killNumber)
-        {
-            System.out.println("I am dead, blarrrgglrlrlrlrrlrl!!!");
-            alive = false;
-        }
-
-        System.out.println("Attack");
-        sol.death(1);
-
-    }
-
-    public Monster(String type, int killNumber)
+    public Monster(String type, int stamina, int challengeRating)
     {
         this.type = type;
-        this.killNumber = killNumber;
+        this.stamina = stamina;
+        this.challengeRating = challengeRating;
     }
     public Monster()
     {
         type = "default";
-        killNumber = 10;
+        stamina = 10;
     }
 
-    public int getKillNumber()
+    public void attackPlayer()
     {
-        return killNumber;
-    }
-
-    public void setKillNumber(int killNumber)
-    {
-        this.killNumber = killNumber;
+        CombatLogic.monsterAttack(attack);
     }
 
     public boolean isAlive()
     {
         return alive;
     }
-
     public void setAlive(boolean alive)
     {
         this.alive = alive;

@@ -48,7 +48,7 @@ public class Soldier
         return attack;
     }
 
-    public void setAttack(int count)
+    public void setAttack(int attack)
     {
         this.attack = attack;
     }

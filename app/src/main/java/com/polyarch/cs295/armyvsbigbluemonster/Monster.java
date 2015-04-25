@@ -27,6 +27,14 @@ public class Monster extends Entity
     {
         return attack;
     }
+    public void damage(int damage)
+    {
+        stamina -= damage;
+    }
+    public int getStamina()
+    {
+        return stamina;
+    }
 
     public boolean isAlive()
     {

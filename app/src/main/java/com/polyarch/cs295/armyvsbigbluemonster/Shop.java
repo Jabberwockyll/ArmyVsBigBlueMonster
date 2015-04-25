@@ -11,6 +11,7 @@ public class Shop
 
     public  static void initSoldiers()
     {
+        soldiers.add(new Soldier());
         soldiers.get(0).setType("Grunt");
         soldiers.get(0).setAttack(1);
         soldiers.get(0).setCost(1);
@@ -21,6 +22,11 @@ public class Shop
         soldiers.get(0).setCount(number);
     }
 
+    public static int getGruntCount()
+    {
+        System.out.println(soldiers.get(0).getCount());
+        return soldiers.get(0).getCount();
+    }
     public static ArrayList<Soldier> returnSoldierList()
     {
         return soldiers;

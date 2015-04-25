@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context= "com.polyarch.cs295.armyvsbigbluemonster.PopupMenuActivity" >
+
+    <item
+        android:id="@+id/Power_1"
+        android:title="Power 1"
+        android:visible="true"/>
+    <item
+        android:id="@+id/Power_2"
+        android:title="Power 2"
+        android:visible="true"/>
+    <item
+        android:id="@+id/Power_3"
+        android:title="Power 3"
+        android:visible="true"/>
+
+</menu>

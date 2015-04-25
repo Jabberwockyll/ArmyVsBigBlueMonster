@@ -57,10 +57,13 @@ public class CombatLogic
 
         int rollNumber = rand.nextInt( (totalAttack - 1) + 1) + 1;
         myMonster.damage(rollNumber);
-
+        int t = 0;
         if(myMonster.getStamina() <= 0)
         {
             myMonster.setAlive(false);
+            t =  Player.getInfluence() + myMonster.challengeRating;
+            Player.setInfluence(t);
+
         }
     }
 

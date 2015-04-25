@@ -20,4 +20,12 @@ public class Player
         this.name = "default";
         this.influence = 10;
     }
+    public static void setInfluence(int influenceVal)
+    {
+       influence = influenceVal;
+    }
+    public static int getInfluence()
+    {
+        return influence;
+    }
 }

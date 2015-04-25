@@ -23,8 +23,8 @@ public class CombatActivity extends ActionBarActivity
         final TextView countText = (TextView) findViewById(R.id.countTextView);
         final TextView gameMessageText = (TextView) findViewById(R.id.gameMessageTextView);
 
-        final Player ply = new Player();
         final Monster mon = new Monster("Blue", 10, 2, 1);
+        Shop.addGrunt(25);
 
         View.OnClickListener menuButtonListener = new View.OnClickListener()
         {
@@ -42,9 +42,7 @@ public class CombatActivity extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-                mon.attackPlayer();
-
-                countText.setText("Count: " + ply.getCount());
+                CombatLogic.monsterAttack(mon);
 
                 if (!mon.isAlive())
                 {

@@ -33,6 +33,11 @@ public class Soldier
         return count;
     }
 
+    public void killSolider()
+    {
+        count--;
+    }
+
     public void setCount(int count)
     {
         this.count = count;

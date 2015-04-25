@@ -21,8 +21,8 @@ public class Shop
         soldiers.get(0).setCount(number);
     }
 
-    public static ArrayList<Soldiers> returnSoldierList()
+    public static ArrayList<Soldier> returnSoldierList()
     {
-        return ArrayList<Soldier> soldiers;
+        return soldiers;
     }
 }

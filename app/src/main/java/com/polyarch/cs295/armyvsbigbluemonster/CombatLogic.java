@@ -1,5 +1,6 @@
 package com.polyarch.cs295.armyvsbigbluemonster;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -8,37 +9,32 @@ import java.util.Random;
 public class CombatLogic
 {
     static Random rand = new Random();
+    static ArrayList<Soldier> soldiersInstance;
 
-    static public int monsterAttack(int monsterAttack, Monster myMonster)
+    static public int monsterAttack(Monster myMonster)
     {
         System.out.println("Monster Attacks!");
-        int rollNumber = rand.nextInt( (monsterAttack - 1) + 1) + 1;
+        int rollNumber = rand.nextInt( (myMonster.getAttack() - 1) + 1) + 1;
 
         //calculating total number of soldiers
         int totalNumberOfSoldiers = 0;
-        ArrayList<Soldier> soldiersInstance = Shop.returnSoldierList();
+
+        soldiersInstance = Shop.returnSoldierList();
         for(int i = 0; i < 1; i++)
         {
-            totalNumberOfSoldiers = totalNumberOfSoldiers + soldiersInstance.get(i).count;
-
+            totalNumberOfSoldiers = totalNumberOfSoldiers + soldiersInstance.get(i).getCount();
         }
 
-        Random randomGenerator = new Random();
-        for (int idx = 1; idx <= myMonster.getAttack(); ++idx) {
-            int randomInt = randomGenerator.nextInt(totalNumberOfSoldiers - 1) + 1;
+        for (int idx = 1; idx <= myMonster.getAttack(); ++idx)
+        {
+            int randomInt = rand.nextInt(totalNumberOfSoldiers - 1) + 1;
 
-            if( randomInt  <= soldiersInstance.get(0).count && soldiersInstance.get(0).count != 0 )
+            if( randomInt  <= soldiersInstance.get(0).getCount() && soldiersInstance.get(0).getCount() != 0 )
             {
-                soldiersInstance.get(0).count--;
+                soldiersInstance.get(0).killSolider();
             }
            // else if (randomInt  <= (soldiersInstance.get(1).count + soldiersInstance.get(1).count)&& soldiersInstance.get(1).count != 0 )
         }
-
-
-
-
-
-
         return rollNumber;
     }
 

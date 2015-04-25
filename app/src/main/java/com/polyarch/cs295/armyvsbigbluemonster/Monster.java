@@ -23,10 +23,9 @@ public class Monster extends Entity
         type = "default";
         stamina = 10;
     }
-
-    public void attackPlayer()
+    public int getAttack()
     {
-        CombatLogic.monsterAttack(attack);
+        return attack;
     }
 
     public boolean isAlive()

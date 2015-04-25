@@ -17,21 +17,25 @@ public class CombatLogic
         //calculating total number of soldiers
         int totalNumberOfSoldiers = 0;
         ArrayList<Soldier> soldiersInstance = Shop.returnSoldierList();
-        for(int i = 0; i < 1; i++)
+        for(int i = 0; i < 13; i++)
         {
             totalNumberOfSoldiers = totalNumberOfSoldiers + soldiersInstance.get(i).count;
 
         }
-
+        int soldier = 0;
+        int j = 0;
         Random randomGenerator = new Random();
         for (int idx = 1; idx <= myMonster.getAttack(); ++idx) {
             int randomInt = randomGenerator.nextInt(totalNumberOfSoldiers - 1) + 1;
 
-            if( randomInt  <= soldiersInstance.get(0).count && soldiersInstance.get(0).count != 0 )
-            {
-                soldiersInstance.get(0).count--;
-            }
-           // else if (randomInt  <= (soldiersInstance.get(1).count + soldiersInstance.get(1).count)&& soldiersInstance.get(1).count != 0 )
+           while( randomInt > soldier)
+           {
+               soldier = soldier + soldiersInstance.get(j).count;
+               j++;
+
+           }
+           soldiersInstance.get(j - 1).count--;
+
         }
 
 

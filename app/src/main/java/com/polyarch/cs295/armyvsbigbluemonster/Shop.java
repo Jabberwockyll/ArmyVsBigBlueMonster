@@ -20,4 +20,9 @@ public class Shop
     {
         soldiers.get(0).setCount(number);
     }
+
+    public static ArrayList<Soldiers> returnSoldierList()
+    {
+        return ArrayList<Soldier> soldiers;
+    }
 }

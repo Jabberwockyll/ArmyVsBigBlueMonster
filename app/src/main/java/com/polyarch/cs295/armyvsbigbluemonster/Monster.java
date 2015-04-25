@@ -6,7 +6,7 @@ package com.polyarch.cs295.armyvsbigbluemonster;
 public class Monster extends Entity
 {
     private int stamina; //When this reaches 0 or lower the monster feints.
-    private int attack; //This decides how many soliders are defeated when the monster attacks.
+    private int attack = 0; //This decides how many soliders are defeated when the monster attacks.
     private int challengeRating; //This is an indicator of the monsters strength and how much influence one will gain from beating the monster.
 
     private boolean alive = true;

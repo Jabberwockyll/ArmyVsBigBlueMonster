@@ -20,6 +20,10 @@
             android:name=".CombatActivity"
             android:label="@string/title_activity_game" >
         </activity>
+        <activity
+            android:name=".CityMenuActivity"
+            android:label="@string/title_activity_city_menu" >
+        </activity>
     </application>
 
 </manifest>

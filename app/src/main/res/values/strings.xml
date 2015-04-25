@@ -10,5 +10,7 @@
     <string name="menu">Menu</string>
     <string name="fight">Fight</string>
     <string name="count">Count</string>
+    <string name="title_activity_city_menu">CityMenuActivity</string>
+    <string name="shop">Shop</string>
 
 </resources>

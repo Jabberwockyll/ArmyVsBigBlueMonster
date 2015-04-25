@@ -11,10 +11,11 @@ public class Monster extends Entity
 
     private boolean alive = true;
 
-    public Monster(String type, int stamina, int challengeRating)
+    public Monster(String type, int stamina, int challengeRating, int attack)
     {
         this.type = type;
         this.stamina = stamina;
+        this.attack = attack;
         this.challengeRating = challengeRating;
     }
     public Monster()
